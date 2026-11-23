@@ -83,6 +83,15 @@ input:focus,select:focus,textarea:focus,.btn:focus-visible,.links a:focus-visibl
 form .btn{background:var(--cobalt);color:#fff;width:100%}
 form .btn:hover{background:var(--cobalt-2)}
 .note{font-size:14px;color:var(--soft);min-height:1.4em}
+  .formcard{background:var(--bg);color:var(--ink);border-radius:16px;padding:clamp(24px,3.5vw,40px);display:grid;gap:16px;align-content:start}
+.formcard h3{font-size:26px}
+.formcard p{color:var(--soft)}
+.formcard ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.formcard li{padding-left:28px;position:relative}
+.formcard li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--lime);box-shadow:inset 0 0 0 4px #0b0d14}
+.formcard .btn{background:var(--cobalt);color:#fff;width:100%;margin-top:6px}
+.formcard .btn:hover{background:var(--cobalt-2)}
+.formcard small{font-size:13px;color:var(--soft);text-align:center}
 .marquee{background:#0b0d14;color:#eef1fb;overflow:hidden;padding:18px 0;border-top:1px solid #ffffff1a}
 .track{display:flex;gap:48px;width:max-content;animation:slide 40s linear infinite;font:600 18px "Space Grotesk",sans-serif}
 .track span{display:flex;align-items:center;gap:48px;white-space:nowrap}
@@ -386,27 +395,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
       </div>
     </div>
 
-    <form id="contactForm" class="reveal" novalidate>
-      <div class="two">
-        <label>Your name<input id="fName" name="name" autocomplete="name" required></label>
-        <label>Email<input id="fEmail" name="email" type="email" autocomplete="email" required></label>
-      </div>
-      <div class="two">
-        <label>Project type
-          <select id="fType" name="type">
-            <option>Website</option><option>Mobile app</option><option>Web app / system</option><option>Ecommerce store</option><option>Something else</option>
-          </select>
-        </label>
-        <label>Budget
-          <select id="fBudget" name="budget">
-            <option>Not sure yet</option><option>$500 – $1,500</option><option>$1,500 – $5,000</option><option>$5,000+</option>
-          </select>
-        </label>
-      </div>
-      <label>Tell me about your project<textarea id="fMsg" name="message" required placeholder="What are you building, who is it for, and when do you need it?"></textarea></label>
-      <button class="btn" type="submit">Send project details</button>
-      <p class="note" id="formNote" role="status"></p>
-    </form>
+        <div class="formcard reveal">
+      <h3>Start your project</h3>
+      <p>Answer a few quick questions about your business, what you need and your budget. It takes about 2 minutes, and I'll get back to you within 24 hours.</p>
+      <ul>
+        <li>What kind of website or app you need</li>
+        <li>Your budget and timeline</li>
+        <li>Any examples or ideas you like</li>
+      </ul>
+      <a class="btn" id="formLink" href="#" target="_blank" rel="noopener">Fill in the project form ↗</a>
+      <small>Opens a short Google Form in a new tab.</small>
+    </div>
   </div>
 </section>
 </main>
@@ -425,9 +424,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   const CONFIG = {
     email: "sidra.sm18@gmail.com",
     linkedin: "https://www.linkedin.com/in/sidra-mowlana-40b90a180",
-    github: "https://github.com/sidramowlana"
+    github: "https://github.com/sidramowlana",
+    googleForm: "https://forms.gle/your-form-link"
   };
-
+  
   const icon = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
 
   const types = [
@@ -564,19 +564,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   }), {threshold: .12}) : null;
   document.querySelectorAll(".reveal").forEach(el => revealObs ? revealObs.observe(el) : el.classList.add("in"));
 
-  // WHAT: checks the form and opens the visitor's email app with a pre-filled enquiry
-  // WHY: works on any static host with no backend; swap for Formspree later if you want messages delivered directly
-  document.getElementById("contactForm").addEventListener("submit", e => {
-    e.preventDefault();
-    const v = id => document.getElementById(id).value.trim();
-    const note = document.getElementById("formNote");
-    if (!v("fName") || !v("fEmail") || !v("fMsg")) { note.textContent = "Please fill in your name, email and project details."; return; }
-    if (!/^\S+@\S+\.\S+$/.test(v("fEmail"))) { note.textContent = "Please enter a valid email address."; return; }
-    const subject = `New ${v("fType")} project from ${v("fName")}`;
-    const body = `Name: ${v("fName")}\nEmail: ${v("fEmail")}\nProject type: ${v("fType")}\nBudget: ${v("fBudget")}\n\n${v("fMsg")}`;
-    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    note.textContent = `Your email app should open now. If it doesn't, email me directly at ${CONFIG.email}.`;
-  });
+  document.getElementById("formLink").href = CONFIG.googleForm;
 }
 </script>
 </body>
