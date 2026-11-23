@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sidra Mowlana · Developer</title>
+<meta name="description" content="Sidra Mowlana builds websites, online stores, booking systems and mobile apps for businesses, from design to launch.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;
+  --bg:light-dark(#ffffff,#0a111e);
+  --ink:light-dark(#0b0d14,#eef1fb);
+  --soft:light-dark(#4a5068,#a6aec8);
+  --zone:light-dark(#f3f6fa,#111a2b);
+  --line:light-dark(#dde3ec,#24324a);
+  --cobalt:#0f2742;--cobalt-2:#0a1c31;--lime:#3fb6a8}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.08;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,44px);font-weight:600}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+
+/* nav */
+header{position:sticky;top:0;z-index:10;background:var(--cobalt);color:#fff;border-bottom:1px solid #ffffff22}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px max(5vw,16px);max-width:1240px;margin:0 auto}
+.logo{font:700 19px "Space Grotesk",sans-serif;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#fff;color:var(--cobalt);font-size:16px}
+.links{display:flex;gap:4px;align-items:center}
+.links a{text-decoration:none;padding:10px 14px;border-radius:8px;font-weight:500;font-size:15px}
+.links a:hover{background:#ffffff1a}
+.links .cta{background:#fff;color:var(--cobalt);font-weight:600}
+.links .cta:hover{background:var(--lime);color:#0b0d14}
+.menu{display:none;background:none;border:1px solid #ffffff55;color:#fff;border-radius:8px;width:44px;height:44px;font-size:20px;cursor:pointer}
+
+/* hero */
+.hero{background:var(--cobalt);color:#fff;padding:clamp(40px,6vw,88px) max(5vw,16px) clamp(56px,7vw,100px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.tag{display:inline-flex;align-items:center;gap:8px;background:#ffffff1a;border:1px solid #ffffff33;padding:6px 14px;border-radius:99px;font-size:14px;font-weight:500}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px #3fb6a833}
+.hero h1{font-size:clamp(38px,5.4vw,64px);font-weight:700;margin:22px 0 20px;letter-spacing:-.02em}
+.hero .lead{font-size:18px;max-width:34em;color:#dfe6ff}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:10px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;font-family:inherit}
+.btn.main{background:var(--lime);color:#0b0d14}
+.btn.main:hover{background:#fff}
+.btn.ghost{border:1px solid #ffffff66;color:#fff}
+.btn.ghost:hover{background:#ffffff1a}
+.facts{display:flex;flex-wrap:wrap;gap:28px;margin-top:40px;padding-top:24px;border-top:1px solid #ffffff2e}
+.facts div{font-size:14px;color:#c9d4ff}
+.facts strong{display:block;font:600 26px "Space Grotesk",sans-serif;color:#fff}
+.art{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 40px #00104d55)}
+.art .float{animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.art .float{animation:none}html{scroll-behavior:auto}}
+
+/* sections */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 48px;align-items:end;margin-bottom:44px}
+.head p{color:var(--soft);font-size:17px}
+
+.zone{background:var(--zone)}
+
+/* contact */
+.contact{background:var(--cobalt);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px)}
+.contact .lead{color:#dfe6ff;font-size:17px;margin-top:16px}
+.direct{margin-top:28px;display:grid;gap:10px}
+.direct a{display:flex;justify-content:space-between;gap:12px;padding:14px 0;border-top:1px solid #ffffff33;text-decoration:none;font-weight:500}
+.direct a span{color:#c9d4ff;font-weight:400}
+form{background:var(--bg);color:var(--ink);border-radius:16px;padding:clamp(22px,3vw,34px);display:grid;gap:16px}
+label{display:grid;gap:6px;font-weight:500;font-size:15px}
+input,select,textarea{font:16px Inter,sans-serif;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:48px;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus,.btn:focus-visible,.links a:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+form .btn{background:var(--cobalt);color:#fff;width:100%}
+form .btn:hover{background:var(--cobalt-2)}
+.note{font-size:14px;color:var(--soft);min-height:1.4em}
+.marquee{background:#0b0d14;color:#eef1fb;overflow:hidden;padding:18px 0;border-top:1px solid #ffffff1a}
+.track{display:flex;gap:48px;width:max-content;animation:slide 40s linear infinite;font:600 18px "Space Grotesk",sans-serif}
+.track span{display:flex;align-items:center;gap:48px;white-space:nowrap}
+.track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.marquee:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;width:auto;padding:0 16px;gap:12px 28px}}
+.price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tier{border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:14px;background:var(--bg)}
+.tier.pop{border:2px solid var(--cobalt);box-shadow:0 20px 40px -24px #0f274288}
+.tier .amt{font:700 clamp(30px,3.5vw,40px) "Space Grotesk",sans-serif}
+.tier .amt small{font:500 15px Inter,sans-serif;color:var(--soft)}
+.tier .badge{align-self:flex-start;font-size:13px;font-weight:600;background:var(--cobalt);color:#fff;padding:4px 12px;border-radius:99px}
+.tier ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.tier li{padding-left:28px;position:relative}
+.tier li::before{content:"";position:absolute;left:0;top:5px;width:16px;height:16px;border-radius:50%;background:var(--lime);box-shadow:inset 0 0 0 4px #0b0d14}
+.tier .btn{margin-top:auto;background:var(--zone);color:var(--ink)}
+.tier.pop .btn{background:var(--cobalt);color:#fff}
+.faq{max-width:860px}
+.faq details{border-top:1px solid var(--line);padding:4px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font:600 18px "Space Grotesk",sans-serif;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:24px;color:var(--cobalt);line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 20px;color:var(--soft);max-width:66ch}
+.midcta{background:#0b0d14;color:#fff;border-radius:18px;padding:clamp(28px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:56px}
+.midcta h3{font-size:clamp(22px,2.6vw,30px)}
+.midcta p{color:#a6aec8;margin-top:6px}
+@media(max-width:980px){.price{grid-template-columns:minmax(0,1fr)}}
+.types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.type{border:1px solid var(--line);border-radius:14px;padding:24px;background:var(--bg);display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}
+.type:hover{transform:translateY(-3px);border-color:var(--cobalt)}
+.type svg{width:34px;height:34px;color:var(--cobalt);margin-bottom:6px}
+.type p{color:var(--soft);font-size:15px}
+.type small{margin-top:auto;padding-top:10px;font-size:13px;color:var(--soft);border-top:1px solid var(--line)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{font:500 15px Inter,sans-serif;min-height:44px;padding:0 18px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.proj{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
+.shot{aspect-ratio:16/10;padding:22px 22px 0;display:flex;align-items:flex-end}
+.win{width:100%;height:100%;background:#fff;border-radius:10px 10px 0 0;box-shadow:0 -10px 30px -10px #0004;overflow:hidden;display:flex;flex-direction:column}
+.bar{height:22px;background:#eef0f5;display:flex;align-items:center;gap:5px;padding:0 10px;flex:none}
+.bar i{width:7px;height:7px;border-radius:50%;background:#c9ced9}
+.page{flex:1;display:grid;grid-template-rows:auto 1fr;padding:14px 16px;gap:12px}
+.mnav{display:flex;justify-content:space-between;align-items:center;font:700 13px "Space Grotesk",sans-serif}
+.mnav span{display:flex;gap:6px}.mnav span b{width:26px;height:5px;border-radius:3px;background:#d5d9e3}
+.mhero{border-radius:8px;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:7px;color:#fff;overflow:hidden}
+.mhero strong{font:700 clamp(14px,2vw,20px)/1.1 "Space Grotesk",sans-serif;max-width:70%}
+.mhero em{font-style:normal;align-self:flex-start;font-size:11px;font-weight:600;padding:5px 10px;border-radius:5px}
+.mhero b{display:block;height:5px;width:50%;border-radius:3px;background:#ffffff88}
+.pbody{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pmeta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px}
+.pmeta .cat{font-weight:600;color:var(--cobalt)}
+.pmeta .status{color:var(--soft)}
+.pbody p{color:var(--soft)}
+.pbody .more{margin-top:auto;padding-top:12px;font-weight:600;text-decoration:none;color:var(--cobalt)}
+.pbody .more:hover{text-decoration:underline}
+:root[data-theme=dark] .pmeta .cat,:root[data-theme=dark] .pbody .more{color:#7fb3e6}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .pmeta .cat,:root:not([data-theme=light]) .pbody .more{color:#7fb3e6}}
+@media(max-width:980px){.types{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.projects{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.types{grid-template-columns:minmax(0,1fr)}}
+/* ---------- motion: scroll-driven, pure CSS where supported ---------- */
+:root{--faint:light-dark(#0f274230,#ffffff2e)}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:var(--lime);transform-origin:left;transform:scaleX(0);z-index:30;pointer-events:none}
+.tl{position:relative;list-style:none;margin:0;padding:0 0 0 52px;max-width:780px;display:grid;gap:34px}
+.tl::before,.tl-fill{content:"";position:absolute;left:17px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.tl-fill{background:var(--lime);transform-origin:top}
+.tl-item{position:relative}
+.tl-node{position:absolute;left:-44px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 6px var(--zone)}
+.tl-item h3{font-size:22px;margin-bottom:6px}
+.tl-item p{color:var(--soft);max-width:56ch}
+.pin-stage{padding:clamp(56px,8vw,120px) max(5vw,16px)}
+.pin-stage .wrap{max-width:1000px}
+.pin-stage h2{font-size:18px;color:var(--soft);font-weight:600;margin-bottom:22px}
+.rv{font:600 clamp(26px,3.6vw,46px)/1.22 "Space Grotesk",sans-serif;letter-spacing:-.01em;text-wrap:pretty}
+.proj .win{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.proj:hover .win{transform:translateY(-8px)}
+.proj{transition:box-shadow .3s,border-color .3s}
+.proj:hover{border-color:var(--cobalt);box-shadow:0 24px 50px -30px #0f274288}
+@keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes grow{to{transform:scaleX(1)}}
+@keyframes lift{to{box-shadow:0 10px 30px #0a1c3166}}
+@keyframes zoomIn{from{opacity:.25;transform:translateY(48px) scale(.93)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:translateY(-28px)}to{transform:translateY(48px)}}
+@keyframes word{from{color:var(--faint)}to{color:var(--ink)}}
+@keyframes fill{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes node{from{background:var(--bg);transform:scale(.6);box-shadow:0 0 0 2px var(--line)}to{background:var(--lime);transform:scale(1);box-shadow:0 0 0 6px var(--zone)}}
+@media(prefers-reduced-motion:no-preference){
+  .hero .wrap>div:first-child>*{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
+  .hero .wrap>div:first-child>:nth-child(2){animation-delay:.1s}
+  .hero .wrap>div:first-child>:nth-child(3){animation-delay:.2s}
+  .hero .wrap>div:first-child>:nth-child(4){animation-delay:.3s}
+  .hero .wrap>div:first-child>:nth-child(5){animation-delay:.4s}
+  .hero .art-box>svg{animation:heroIn 1.1s .25s cubic-bezier(.2,.7,.2,1) both}
+  @supports(animation-timeline:view()){
+    .progress{animation:grow linear both;animation-timeline:scroll(root block)}
+    header{animation:lift linear both;animation-timeline:scroll(root block);animation-range:0 220px}
+    .sz{animation:zoomIn linear both;animation-timeline:view();animation-range:entry 0% cover 32%}
+    .hero .art-box{animation:drift linear both;animation-timeline:view();animation-range:cover}
+    .pin{min-height:260vh;view-timeline:--about block}
+    .pin-stage{position:sticky;top:0;min-height:100svh;display:grid;align-items:center}
+    .rv .w{color:var(--faint);animation:word linear both;animation-timeline:--about;animation-range:contain var(--s) contain var(--e)}
+    .tl-fill{animation:fill linear both;animation-timeline:view(block 55% 40%)}
+    .tl-node{animation:node linear both;animation-timeline:view(block 55% 40%);animation-range:entry 0% entry 100%}
+  }
+}
+@supports(interpolate-size:allow-keywords){
+  :root{interpolate-size:allow-keywords}
+  .faq details::details-content{block-size:0;overflow:clip;transition:block-size .35s ease,content-visibility .35s allow-discrete}
+  .faq details[open]::details-content{block-size:auto}
+}
+footer{padding:28px max(5vw,16px);font-size:14px;color:var(--soft);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media(max-width:760px){
+  .menu{display:block}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cobalt);flex-direction:column;align-items:stretch;padding:8px max(5vw,16px) 16px;border-bottom:1px solid #ffffff22}
+  .links.open{display:flex}
+  .links a{padding:14px}
+  .hero .wrap,.head,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero .art-box{order:-1;max-width:440px}
+}
+@media(max-width:560px){
+  .two{grid-template-columns:minmax(0,1fr)}
+  .facts{gap:20px}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="logo" href="#top"><b>SM</b>Sidra Mowlana</a>
+    <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="links" id="links">
+      <a href="#work">Work</a>
+      <a href="#types">What I build</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="#contact">Start a project</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag"><i></i>Available for freelance projects</span>
+      <h1>Websites and apps that bring your business more customers.</h1>
+      <p class="lead">I'm Sidra. I design and build websites, online stores, booking systems and mobile apps for businesses, from the first idea all the way to launch day and beyond.</p>
+      <div class="btns">
+        <a class="btn main" href="#contact">Tell me about your project</a>
+        <a class="btn ghost" href="#work">See my work</a>
+      </div>
+      <div class="facts">
+        <div><strong>5+ years</strong>building real products</div>
+        <div><strong>Design to launch</strong>one person, whole project</div>
+        <div><strong>Worldwide</strong>remote clients welcome</div>
+      </div>
+    </div>
+
+    <div class="art-box" aria-hidden="true">
+      <svg class="art" viewBox="0 0 520 440">
+        <defs>
+          <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f7ff"/><stop offset="1" stop-color="#dfe7ff"/></linearGradient>
+          <linearGradient id="rack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d2a5c"/><stop offset="1" stop-color="#0b1233"/></linearGradient>
+          <g id="row"><rect width="150" height="34" rx="7" fill="url(#rack)" stroke="#3a4a8a"/><circle cx="18" cy="17" r="4" fill="#3fb6a8"/><rect x="34" y="13" width="70" height="8" rx="4" fill="#3a4a8a"/><rect x="112" y="13" width="24" height="8" rx="4" fill="#3a4a8a"/></g>
+        </defs>
+        <!-- ground shadow -->
+        <ellipse cx="270" cy="410" rx="230" ry="18" fill="#00104d" opacity=".35"/>
+        <!-- server rack -->
+        <g transform="translate(350 210)">
+          <rect x="-8" y="-12" width="166" height="198" rx="12" fill="#0b1233"/>
+          <use href="#row" y="0"/><use href="#row" y="44"/><use href="#row" y="88"/><use href="#row" y="132"/>
+        </g>
+        <!-- browser window -->
+        <g transform="translate(20 40)">
+          <rect width="360" height="260" rx="14" fill="#0b1233"/>
+          <rect x="0" y="0" width="360" height="34" rx="14" fill="#1d2a5c"/>
+          <rect x="0" y="20" width="360" height="14" fill="#1d2a5c"/>
+          <circle cx="20" cy="17" r="5" fill="#ff6f59"/><circle cx="38" cy="17" r="5" fill="#ffc542"/><circle cx="56" cy="17" r="5" fill="#3fb6a8"/>
+          <rect x="84" y="10" width="200" height="14" rx="7" fill="#0b1233"/>
+          <rect x="10" y="44" width="340" height="206" rx="8" fill="url(#scr)"/>
+          <rect x="26" y="62" width="150" height="16" rx="4" fill="#1e4e8c"/>
+          <rect x="26" y="88" width="200" height="9" rx="4" fill="#9fb0e6"/>
+          <rect x="26" y="104" width="170" height="9" rx="4" fill="#9fb0e6"/>
+          <rect x="26" y="126" width="80" height="26" rx="6" fill="#3fb6a8"/>
+          <rect x="230" y="62" width="104" height="92" rx="8" fill="#1e4e8c" opacity=".15"/>
+          <path d="M244 140 l22 -30 l18 18 l14 -20 l22 32 z" fill="#1e4e8c" opacity=".55"/>
+          <g fill="#ffffff" stroke="#c7d2f5"><rect x="26" y="170" width="96" height="64" rx="8"/><rect x="132" y="170" width="96" height="64" rx="8"/><rect x="238" y="170" width="96" height="64" rx="8"/></g>
+          <g fill="#1e4e8c"><rect x="38" y="184" width="22" height="22" rx="6"/><rect x="144" y="184" width="22" height="22" rx="6"/><rect x="250" y="184" width="22" height="22" rx="6"/></g>
+          <g fill="#c7d2f5"><rect x="38" y="214" width="66" height="7" rx="3"/><rect x="144" y="214" width="66" height="7" rx="3"/><rect x="250" y="214" width="66" height="7" rx="3"/></g>
+        </g>
+        <!-- phone -->
+        <g class="float">
+          <g transform="translate(250 150)">
+            <rect width="136" height="260" rx="24" fill="#0b0d14"/>
+            <rect x="8" y="8" width="120" height="244" rx="18" fill="url(#scr)"/>
+            <rect x="48" y="16" width="40" height="8" rx="4" fill="#0b0d14"/>
+            <rect x="20" y="38" width="96" height="70" rx="12" fill="#1e4e8c"/>
+            <rect x="32" y="56" width="50" height="9" rx="4" fill="#ffffff" opacity=".9"/>
+            <rect x="32" y="72" width="70" height="20" rx="5" fill="#3fb6a8"/>
+            <g fill="#ffffff" stroke="#c7d2f5"><rect x="20" y="120" width="96" height="34" rx="9"/><rect x="20" y="162" width="96" height="34" rx="9"/></g>
+            <g fill="#1e4e8c"><circle cx="38" cy="137" r="8"/><circle cx="38" cy="179" r="8"/></g>
+            <g fill="#c7d2f5"><rect x="54" y="133" width="50" height="8" rx="4"/><rect x="54" y="175" width="50" height="8" rx="4"/></g>
+            <rect x="20" y="212" width="96" height="28" rx="9" fill="#0b0d14"/>
+            <rect x="46" y="223" width="44" height="6" rx="3" fill="#3fb6a8"/>
+          </g>
+        </g>
+        <!-- connectors -->
+        <path d="M386 280 C 420 280 410 250 350 250" fill="none" stroke="#3fb6a8" stroke-width="3" stroke-dasharray="6 6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="What I build">
+  <div class="track" id="track"></div>
+</div>
+
+<section class="band" id="work">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Recent projects</h2>
+      <p>A look at websites and apps I've designed and built. Each one is made to fit the business it's for, not a template.</p>
+    </div>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter projects"></div>
+    <div class="projects reveal" id="proj-grid"></div>
+  </div>
+</section>
+
+<section class="band zone" id="types">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Websites and apps I build</h2>
+      <p>Whether you need your first website or a full system to run your business, I'll build something that fits how you work and what your customers need.</p>
+    </div>
+    <div class="types reveal" id="types-grid"></div>
+  </div>
+</section>
+
+<section class="pin" id="about">
+  <div class="pin-stage">
+    <div class="wrap">
+      <h2>Hi, I'm Sidra.</h2>
+      <p class="rv" id="rv">I help businesses get online with websites and apps that look great, work smoothly and bring in real customers. I handle everything from the first idea to launch day, so you only ever deal with one person who cares about your customers as much as you do.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band zone" id="process">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>How we'll work together</h2>
+      <p>A clear process means no surprises. You'll always know what's being built, when it's ready, and what comes next.</p>
+    </div>
+    <ol class="tl" id="steps"></ol>
+    <div class="midcta sz">
+      <div><h3>Not sure what you need yet?</h3><p>Book a free 20-minute call and we'll figure out the right solution together.</p></div>
+      <a class="btn main" href="#contact">Book a free call</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2>Simple, transparent pricing</h2>
+      <p>Every project is different, so these are starting points. You'll get a fixed quote before any work begins, with no hidden costs. Monthly care plans for updates, backups and fixes start from $75/month.</p>
+    </div>
+    <div class="price reveal" id="price-grid"></div>
+  </div>
+</section>
+
+<section class="band zone" id="faq">
+  <div class="wrap">
+    <div class="head reveal"><h2>Questions clients ask</h2><p>Can't find your answer here? Just send me a message.</p></div>
+    <div class="faq reveal" id="faq-list"></div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Have a project in mind?</h2>
+      <p class="lead">Tell me what you want to build. I'll reply within 24 hours with questions, a suggested approach, and a rough timeline and quote.</p>
+      <div class="direct">
+        <a id="emailLink" href="#"><strong>Email</strong><span id="emailText"></span></a>
+        <a id="linkedinLink" href="#" target="_blank" rel="noopener"><strong>LinkedIn</strong><span>View profile</span></a>
+        <a id="githubLink" href="#" target="_blank" rel="noopener"><strong>GitHub</strong><span>See my code</span></a>
+      </div>
+    </div>
+
+    <form id="contactForm" class="reveal" novalidate>
+      <div class="two">
+        <label>Your name<input id="fName" name="name" autocomplete="name" required></label>
+        <label>Email<input id="fEmail" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="two">
+        <label>Project type
+          <select id="fType" name="type">
+            <option>Website</option><option>Mobile app</option><option>Web app / system</option><option>Ecommerce store</option><option>Something else</option>
+          </select>
+        </label>
+        <label>Budget
+          <select id="fBudget" name="budget">
+            <option>Not sure yet</option><option>$500 – $1,500</option><option>$1,500 – $5,000</option><option>$5,000+</option>
+          </select>
+        </label>
+      </div>
+      <label>Tell me about your project<textarea id="fMsg" name="message" required placeholder="What are you building, who is it for, and when do you need it?"></textarea></label>
+      <button class="btn" type="submit">Send project details</button>
+      <p class="note" id="formNote" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Sidra Mowlana. Software engineer &amp; freelance developer.</span>
+    <span>Colombo, Sri Lanka · <span id="clock"></span> local time</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+{
+  /* EDIT THESE: your real contact details */
+  const CONFIG = {
+    email: "hello@yourdomain.com",
+    linkedin: "https://www.linkedin.com/in/your-profile",
+    github: "https://github.com/your-username"
+  };
+
+  const icon = p => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+
+  const types = [
+    {t:"Restaurant & café websites", d:"Menus, photos, location and online ordering or WhatsApp orders.", b:"Cafés, restaurants, bakeries", i:'<path d="M5 3v8a3 3 0 0 0 6 0V3M8 3v18M16 21V3c2.5 1 4 3.5 4 7h-4"/>'},
+    {t:"Booking websites", d:"Let customers see your services and book appointments online, 24/7.", b:"Clinics, salons, studios, tutors", i:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8 15h3"/>'},
+    {t:"Online stores", d:"Sell your products with a beautiful store, secure checkout and easy order management.", b:"Fashion, gifts, home businesses", i:'<path d="M3 4h2l2.5 11h11L21 8H6.5"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>'},
+    {t:"Company websites", d:"A professional site that explains what you do and turns visitors into enquiries.", b:"Agencies, law firms, consultants", i:'<rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/>'},
+    {t:"Landing pages", d:"One focused page built to launch a product, run ads or grow your email list.", b:"Launches, courses, campaigns", i:'<path d="M5 19l4-4M14 4l6 6-8 8-6-6z"/><circle cx="15" cy="9" r="1.5"/>'},
+    {t:"Personal brand sites", d:"Show your story, services and work in one place that people remember.", b:"Coaches, creators, freelancers", i:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>'},
+    {t:"Web apps & dashboards", d:"Custom systems to manage customers, orders, staff or stock in one place.", b:"Growing businesses, startups", i:'<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>'},
+    {t:"Mobile apps", d:"iOS and Android apps your customers can download, from first screen to app store.", b:"Loyalty, delivery, booking apps", i:'<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>'}
+  ];
+
+  /* EDIT THESE: your projects. Put the live link in url, or leave it "" to hide the link */
+  const projects = [
+    {n:"Bing Chun Union Branch", c:"Restaurant & café", s:"Demo website", url:"", d:"A bright, mobile-first website for a bubble tea shop in Colombo, with the full drinks menu, prices, location and quick WhatsApp ordering.", h:"Fresh bubble tea in Colombo", cta:"Order now", bg:"#e94e77", btn:"#ffd23f", ink:"#1b1b1b"},
+    {n:"The Grind Café", c:"Restaurant & café", s:"In progress", url:"", d:"A premium café website with a warm, modern feel, showcasing the full menu with prices, the café's story and opening hours.", h:"Coffee worth slowing down for", cta:"View menu", bg:"#3b2a20", btn:"#e8c39e", ink:"#1b1b1b"},
+    {n:"CareWell Clinic", c:"Booking website", s:"Concept design", url:"", d:"A calm, trustworthy clinic website where patients can browse doctors and services and book appointments online.", h:"Book your appointment in minutes", cta:"Book now", bg:"#0f7c78", btn:"#ffffff", ink:"#0f7c78"},
+    {n:"Atelier Online Store", c:"Online store", s:"Concept design", url:"", d:"A clean ecommerce store for a small fashion brand, with product collections, size options and a fast, simple checkout.", h:"New season, new favourites", cta:"Shop now", bg:"#1b1b1b", btn:"#f2e8dc", ink:"#1b1b1b"},
+    {n:"Perera & Co. Legal", c:"Company website", s:"Concept design", url:"", d:"A polished law firm website that builds trust, explains each practice area clearly and makes it easy to request a consultation.", h:"Clear legal advice you can trust", cta:"Get in touch", bg:"#1f2a44", btn:"#c8a464", ink:"#1f2a44"},
+    {n:"Bloom Creative Agency", c:"Company website", s:"Concept design", url:"", d:"A bold, colourful agency site with a portfolio gallery, service packages and a lead form that books discovery calls.", h:"Brands people can't scroll past", cta:"Start a project", bg:"#6c3cf0", btn:"#3fb6a8", ink:"#1b1b1b"}
+  ];
+
+  const ticker = ["Business websites","Online stores","Booking systems","Restaurant websites","Landing pages","Mobile apps","Web apps","Dashboards","Personal brand sites"];
+
+  const steps = [
+    {t:"Discover", d:"We talk through your goals, customers and budget, and agree on exactly what will be built."},
+    {t:"Design", d:"You see how your site or app will look and work before any building starts."},
+    {t:"Build", d:"I build it in stages and share progress regularly so you can give feedback early."},
+    {t:"Launch", d:"I test everything, put it live on your domain and make sure it runs smoothly."},
+    {t:"Support", d:"After launch I'm here for fixes, updates and new features as your business grows."}
+  ];
+
+  /* EDIT THESE: your package prices and what each includes */
+  const pricing = [
+    {t:"Starter", amt:"$500", per:"from", d:"A professional online presence for small businesses, cafés, tutors and creators.", f:["Up to 5 pages","Mobile-friendly custom design","Contact form, WhatsApp & Google Maps","Basic SEO setup","Domain & hosting setup","2 revision rounds","Delivery in 1–2 weeks","14 days of support"]},
+    {t:"Business", amt:"$1,500", per:"from", pop:true, d:"A website that brings in customers, which you can manage yourself.", f:["Everything in Starter","Up to 10 pages","Online booking, a store (up to 30 products) or a blog","Admin panel to edit content & prices","Payment integration if needed","Full SEO, speed optimisation & analytics","3 revision rounds","Delivery in 3–4 weeks","30 days of support + training video"]},
+    {t:"Premium", amt:"$5,000", per:"from", d:"Custom web apps, mobile apps and full business systems.", f:["Planning session & feature roadmap","Custom UI/UX design, approved before build","Web app, iOS & Android app or full store","User accounts, logins & dashboards","Payment & third-party integrations","Secure database & cloud hosting","Full testing before launch","Milestone delivery in 6–12 weeks","60 days of support"]}
+  ];
+
+  const faqs = [
+    ["How long does a project take?","A business website usually takes 1–3 weeks. Web apps and mobile apps typically take 4–12 weeks depending on features. You'll get a clear timeline before we start."],
+    ["Do you work with clients outside Sri Lanka?","Yes. I work remotely with clients worldwide and keep you updated regularly over email, WhatsApp or video calls in your time zone."],
+    ["How does payment work?","Projects are usually split into a deposit to start and the balance at launch. Larger projects are paid in milestones as each stage is delivered."],
+    ["I don't have a design. Can you help?","Absolutely. I can design the look and flow of your product before building it, so you see exactly what you're getting."],
+    ["Will I own my website or app?","Yes. Once the project is paid in full, the code, design and accounts are yours."],
+    ["What happens after launch?","Every project includes a support period. After that, I offer maintenance plans for updates, fixes, backups and new features."]
+  ];
+
+  // WHAT: builds the scrolling strip of website types, doubled for a seamless loop
+  // WHY: tells visitors at a glance what you can build for them
+  document.getElementById("track").innerHTML = [...ticker, ...ticker].map(t => `<span>${t}</span>`).join("");
+
+  // WHAT: draws one project card with a mini website preview in that project's colours
+  // WHY: gives every project a visual without needing screenshot files; swap in real screenshots later
+  const card = p => `<article class="proj sz">
+    <div class="shot" style="background:${p.bg}">
+      <div class="win"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="page"><div class="mnav" style="color:${p.ink}">${p.n}<span><b></b><b></b><b></b></span></div>
+          <div class="mhero" style="background:${p.bg}"><strong>${p.h}</strong><b></b><em style="background:${p.btn};color:${p.ink}">${p.cta}</em></div>
+        </div>
+      </div>
+    </div>
+    <div class="pbody">
+      <div class="pmeta"><span class="cat">${p.c}</span><span class="status">${p.s}</span></div>
+      <h3>${p.n}</h3><p>${p.d}</p>
+      ${p.url ? `<a class="more" href="${p.url}" target="_blank" rel="noopener">View live site ↗</a>` : ""}
+    </div></article>`;
+
+  // WHAT: shows the projects for the chosen category
+  // WHY: lets clients jump straight to work like theirs
+  const grid = document.getElementById("proj-grid"), filters = document.getElementById("filters");
+  const cats = ["All", ...new Set(projects.map(p => p.c))];
+  const show = cat => {
+    grid.innerHTML = projects.filter(p => cat === "All" || p.c === cat).map(card).join("");
+    filters.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.c === cat));
+  };
+  filters.innerHTML = cats.map(c => `<button type="button" data-c="${c}">${c}</button>`).join("");
+  filters.addEventListener("click", e => { const b = e.target.closest("button"); if (b) show(b.dataset.c); });
+  show("All");
+
+  // WHAT: fills the "Websites and apps I build" cards
+  // WHY: shows clients the kinds of projects you take on, in plain business language
+  document.getElementById("types-grid").innerHTML = types.map(t =>
+    `<article class="type sz">${icon(t.i)}<h3>${t.t}</h3><p>${t.d}</p><small>Great for: ${t.b}</small></article>`).join("");
+
+  // WHAT: builds the process as a vertical timeline that fills in as you scroll
+  // WHY: walks clients through each stage, one step at a time
+  document.getElementById("steps").innerHTML = '<span class="tl-fill" aria-hidden="true"></span>' + steps.map(s =>
+    `<li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div class="sz"><h3>${s.t}</h3><p>${s.d}</p></div></li>`).join("");
+
+  // WHAT: fills the pricing tiers
+  // WHY: clients decide faster when they can see a starting price
+  document.getElementById("price-grid").innerHTML = pricing.map(p =>
+    `<div class="tier sz${p.pop ? " pop" : ""}">${p.pop ? '<span class="badge">Most popular</span>' : ""}<h3>${p.t}</h3><div class="amt">${p.per ? `<small>${p.per} </small>` : ""}${p.amt}</div><p style="color:var(--soft)">${p.d}</p><ul>${p.f.map(x=>`<li>${x}</li>`).join("")}</ul><a class="btn" href="#contact">Get started</a></div>`).join("");
+
+  // WHAT: fills the FAQ accordion
+  // WHY: answers common questions before a client has to ask
+  document.getElementById("faq-list").innerHTML = faqs.map(([q,a]) => `<details class="sz"><summary>${q}</summary><p>${a}</p></details>`).join("");
+
+  // WHAT: wraps each word of the About text in its own span with a start/end point
+  // WHY: lets CSS colour the words in one by one as the visitor scrolls, like the reference site
+  const rv = document.getElementById("rv"), words = rv.textContent.trim().split(/\s+/), n = words.length;
+  rv.setAttribute("aria-label", rv.textContent.trim());
+  rv.innerHTML = words.map((w, i) => `<span class="w" aria-hidden="true" style="--s:${(i / n * 100).toFixed(2)}%;--e:${((i + 1) / n * 100).toFixed(2)}%">${w}</span>`).join(" ");
+
+  // WHAT: shows your current Colombo time in the footer
+  // WHY: tells international clients when you're likely to reply
+  const clock = () => document.getElementById("clock").textContent = new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Colombo",hour:"2-digit",minute:"2-digit"});
+  clock(); setInterval(clock, 30000);
+
+  // WHAT: applies your contact details from CONFIG to the contact links
+  // WHY: you only change your email/links once at the top of the script
+  document.getElementById("emailText").textContent = CONFIG.email;
+  document.getElementById("emailLink").href = "mailto:" + CONFIG.email;
+  document.getElementById("linkedinLink").href = CONFIG.linkedin;
+  document.getElementById("githubLink").href = CONFIG.github;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // WHAT: opens and closes the mobile menu
+  // WHY: on small screens the nav links collapse behind a button
+  const menuBtn = document.getElementById("menuBtn"), links = document.getElementById("links");
+  menuBtn.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  links.addEventListener("click", e => { if (e.target.tagName === "A") { links.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); } });
+
+  // WHAT: fades sections in as they scroll into view
+  // WHY: fallback only for browsers without scroll-driven animations, so the two effects never clash
+  const scrollAnim = window.CSS && CSS.supports("animation-timeline: view()");
+  const revealObs = !scrollAnim && "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); }
+  }), {threshold: .12}) : null;
+  document.querySelectorAll(".reveal").forEach(el => revealObs ? revealObs.observe(el) : el.classList.add("in"));
+
+  // WHAT: checks the form and opens the visitor's email app with a pre-filled enquiry
+  // WHY: works on any static host with no backend; swap for Formspree later if you want messages delivered directly
+  document.getElementById("contactForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const note = document.getElementById("formNote");
+    if (!v("fName") || !v("fEmail") || !v("fMsg")) { note.textContent = "Please fill in your name, email and project details."; return; }
+    if (!/^\S+@\S+\.\S+$/.test(v("fEmail"))) { note.textContent = "Please enter a valid email address."; return; }
+    const subject = `New ${v("fType")} project from ${v("fName")}`;
+    const body = `Name: ${v("fName")}\nEmail: ${v("fEmail")}\nProject type: ${v("fType")}\nBudget: ${v("fBudget")}\n\n${v("fMsg")}`;
+    location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    note.textContent = `Your email app should open now. If it doesn't, email me directly at ${CONFIG.email}.`;
+  });
+}
+</script>
+</body>
+</html>
