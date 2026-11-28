@@ -78,6 +78,14 @@ body.locked{overflow:hidden}
 .trust{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:36px;padding-top:22px;border-top:1px solid var(--rule);font-size:14px;color:var(--mute)}
 .trust b{display:block;font-size:17px;color:var(--ink);font-weight:600}
 
+
+/* WHAT: crosses out "small" in the headline with a line that draws across after the words appear
+   WHY: a playful touch showing you work with businesses of any size, not only small ones */
+.hero h1 .strike{text-decoration:none;position:relative;color:var(--mute)}
+.hero h1 .strike::after{content:"";position:absolute;left:-4%;right:-4%;top:52%;height:.09em;background:var(--brand);border-radius:2px;transform-origin:left;transform:rotate(-3deg)}
+@media(prefers-reduced-motion:no-preference){.hero h1 .strike::after{animation:strikeIn .6s 1s cubic-bezier(.2,.7,.2,1) both}}
+@keyframes strikeIn{from{transform:rotate(-3deg) scaleX(0)}to{transform:rotate(-3deg) scaleX(1)}}
+
 /* work list */
 .rows{border-top:1.5px solid var(--ink)}
 .row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,120px) 32px;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none;position:relative}
@@ -87,6 +95,7 @@ body.locked{overflow:hidden}
 .row .arr{font-size:20px;text-align:right;transition:transform .3s;color:var(--mute)}
 .row:hover h3{transform:translateX(10px);color:var(--brand)}
 .row:hover .arr{transform:translate(3px,-3px);color:var(--warm)}
+.row{color:inherit;cursor:pointer}
 .row .sw{width:12px;height:12px;border-radius:50%;display:none}
 .peek{position:fixed;left:0;top:0;width:320px;aspect-ratio:16/10;pointer-events:none;z-index:30;border-radius:10px;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.9);transition:opacity .25s,transform .3s cubic-bezier(.2,.7,.2,1);box-shadow:0 24px 50px -18px #0006}
 .peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
@@ -325,7 +334,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <div class="top">
       <div class="txt">
         <span class="kicker">Hi, I'm Sidra 👋</span>
-        <h1>I build websites and apps for small businesses.</h1>
+        <h1>I build websites and apps for <s class="strike">small</s> businesses.</h1>
         <p class="lead">By day I'm a software engineer, and I've been writing code for over five years. In the evenings and on weekends I take on a few freelance projects: sites for cafés, shops and clinics, and apps for people with an idea they want to get off the ground.</p>
         <div class="cta">
           <a class="btn solid" href="#contact">Tell me about your project</a>
@@ -345,10 +354,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="work">
   <div class="wrap">
-    <div class="label"><span>Recent work</span></div>
+    <div class="label"><span>Work</span></div>
     <div class="rows" id="rows">
-<div class="row" data-i="0"><span class="sw" style="background:#e94e77"></span><h3>Bing Chun Union Branch</h3><span class="what">Bubble tea shop, Colombo</span><span class="st">Demo site</span><span class="arr">→</span></div><div class="row" data-i="1"><span class="sw" style="background:#3b2a20"></span><h3>The Grind Café</h3><span class="what">Café menu &amp; story site</span><span class="st">In progress</span><span class="arr">→</span></div></div>
-    <p class="note">I'm just getting started as a freelancer, so the list is short for now. Before this I spent five years on software for companies, which I can't show here.</p>
+<a class="row" data-i="0" href="https://sidramowlana.github.io/agency-demo/" target="_blank" rel="noopener"><span class="sw" style="background:#6c3cf0"></span><h3>Agency website</h3><span class="what">Portfolio and enquiries for a creative studio</span><span class="st">Website</span><span class="arr">↗</span></a>
+<a class="row" data-i="1" href="https://sidramowlana.github.io/store-demo/" target="_blank" rel="noopener"><span class="sw" style="background:#1b1b1b"></span><h3>E-commerce store</h3><span class="what">Products, cart and online payments</span><span class="st">Online store</span><span class="arr">↗</span></a>
+<a class="row" data-i="2" href="https://sidramowlana.github.io/booking-demo/" target="_blank" rel="noopener"><span class="sw" style="background:#e94e77"></span><h3>Booking system</h3><span class="what">Appointments and reminders for a clinic</span><span class="st">Web app</span><span class="arr">↗</span></a>
+</div>
+    <p class="note">Client names are kept private. Ask me and I'll walk you through examples on a call.</p>
   </div>
 </section>
 
@@ -417,7 +429,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
         <p>Fill in the form and tell me a bit about it. It doesn't have to be fully figured out. I read every one myself and usually reply within a day or two.</p>
         <p class="sign">Sidra</p>
         <div class="cta">
-          <a class="btn solid" id="formLink" href="#" target="_blank" rel="noopener">Open the project form ↗</a>
+          <a class="btn solid" id="formLink" href="https://tally.so/r/J1zMJ4" target="_blank" rel="noopener">Open the project form ↗</a>
         </div>
       </div>
       <div class="links">
@@ -447,14 +459,15 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     email: "sidra.sm18@gmail.com",
     linkedin: "https://www.linkedin.com/in/sidra-mowlana-40b90a180",
     github: "https://github.com/sidramowlana",
-    googleForm: "https://forms.gle/your-form-link"
+    googleForm: "https://tally.so/r/J1zMJ4"
   };
 
   /* Project colours for the hover preview (the project text itself is in the HTML above) */
   const projects = [
-    {n:"Bing Chun Union Branch", w:"Bubble tea shop, Colombo", s:"Demo", url:"", h:"Fresh bubble tea in Colombo", cta:"Order now", bg:"#e94e77", btn:"#ffd23f", ink:"#1b1b1b"},
-    {n:"The Grind Café", w:"Café menu & story site", s:"In progress", url:"", h:"Coffee worth slowing down for", cta:"View menu", bg:"#3b2a20", btn:"#e8c39e", ink:"#1b1b1b"}
-  ];
+    {n:"Agency website", h:"Brands people can't scroll past", cta:"Start a project", bg:"#6c3cf0", btn:"#c9f25a", ink:"#1b1b1b"},
+    {n:"E-commerce store", h:"New season, new favourites", cta:"Shop now", bg:"#1b1b1b", btn:"#f2e8dc", ink:"#1b1b1b"},
+    {n:"Booking system", h:"Book your appointment in minutes", cta:"Book now", bg:"#0f7c78", btn:"#ffffff", ink:"#0f7c78"},
+   ];
 
   const $ = id => document.getElementById(id);
 
