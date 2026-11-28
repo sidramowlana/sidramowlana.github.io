@@ -7,7 +7,7 @@
 <meta name="description" content="Sidra Mowlana is a software engineer in Colombo who builds websites, online stores, booking systems and apps for small businesses.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:light dark;
   --paper:light-dark(#f7f8f7,#0e1210);
@@ -98,7 +98,11 @@ body.locked{overflow:hidden}
 .mock .hd{flex:1;border-radius:6px;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:8px;color:#fff}
 .mock .hd b{font-size:16px;line-height:1.15;max-width:75%}
 .mock .hd i{font-style:normal;font-size:10px;font-weight:600;align-self:flex-start;padding:4px 9px;border-radius:4px}
-.note{margin-top:18px;font-size:14px;color:var(--mute)}
+.note{margin-top:18px;font-size:15px;color:var(--mute);max-width:60ch}
+.price-intro{color:var(--mute);max-width:60ch;margin:-8px 0 28px}
+.care a{color:var(--brand);text-decoration:underline}
+.contact .sign{font-family:"Caveat",cursive;font-size:34px;color:#4cc79a;margin-top:18px;line-height:1}
+.hero figcaption{justify-content:flex-start}
 
 /* ticker */
 .make{overflow:hidden;background:var(--panel);border-block:1px solid var(--rule);padding:22px 0;-webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
@@ -296,7 +300,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <header>
   <div class="wrap bar">
     <a class="me-name" href="#top">Sidra Mowlana</a>
-    <span class="now"><i class="dot"></i><span>Colombo, <span id="clock"></span> · taking new projects</span></span>
+    <span class="now">Web &amp; app developer, Colombo</span>
     <nav aria-label="Main">
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -312,7 +316,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <a href="#pricing">Pricing</a>
   <a href="#faq">Questions</a>
   <a href="#contact">Contact</a>
-  <p class="menu-now"><i class="dot"></i><span>Colombo, <span id="clock2"></span> · taking new projects</span></p>
+  <p class="menu-now">sidra.sm18@gmail.com</p>
 </div>
 
 <main id="top">
@@ -320,24 +324,19 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap">
     <div class="top">
       <div class="txt">
-        <span class="kicker"><i class="dot"></i>Freelance web &amp; app developer · Colombo</span>
-        <h1>I build websites and apps that help small businesses <span class="hl">get real customers.</span></h1>
-        <p class="lead">I'm Sidra, a software engineer with 5+ years of experience. I work with cafés, clinics, shops and founders who want to be found online, booked and paid, from the first chat to launch day.</p>
+        <span class="kicker">Hi, I'm Sidra 👋</span>
+        <h1>I build websites and apps for small businesses.</h1>
+        <p class="lead">By day I'm a software engineer, and I've been writing code for over five years. In the evenings and on weekends I take on a few freelance projects: sites for cafés, shops and clinics, and apps for people with an idea they want to get off the ground.</p>
         <div class="cta">
-          <a class="btn solid" href="#contact">Start a project →</a>
+          <a class="btn solid" href="#contact">Tell me about your project</a>
           <a class="btn" href="#work">See my work</a>
-        </div>
-        <div class="trust">
-          <div><b>5+ years</b>in software engineering</div>
-          <div><b>One person</b>from design to launch</div>
-          <div><b>Fixed quotes</b>no hidden costs</div>
         </div>
       </div>
       <div class="photo-wrap">
         <figure class="photo">
           <img src="sidra.jpg" alt="Sidra Mowlana sitting at a café table in Colombo" onerror="this.remove()">
           <span aria-hidden="true">SM</span>
-          <figcaption><span>Sidra Mowlana</span><span>Colombo, LK</span></figcaption>
+          <figcaption><span>Me, in Colombo</span></figcaption>
         </figure>
       </div>
     </div>
@@ -346,9 +345,10 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="work">
   <div class="wrap">
-    <div class="label"><span>Selected work</span><span id="count"></span></div>
-    <div class="rows" id="rows"></div>
-    <p class="note">Concept designs show the kind of site I'd build for that type of business.</p>
+    <div class="label"><span>Recent work</span></div>
+    <div class="rows" id="rows">
+<div class="row" data-i="0"><span class="sw" style="background:#e94e77"></span><h3>Bing Chun Union Branch</h3><span class="what">Bubble tea shop, Colombo</span><span class="st">Demo site</span><span class="arr">→</span></div><div class="row" data-i="1"><span class="sw" style="background:#3b2a20"></span><h3>The Grind Café</h3><span class="what">Café menu &amp; story site</span><span class="st">In progress</span><span class="arr">→</span></div></div>
+    <p class="note">I'm just getting started as a freelancer, so the list is short for now. Before this I spent five years on software for companies, which I can't show here.</p>
   </div>
 </section>
 
@@ -356,57 +356,68 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   <div class="wrap">
     <div class="label"><span>Things I make</span></div>
   </div>
-  <div class="make" aria-label="Things I make"><div class="make-track" id="make"></div></div>
+  <div class="make" aria-label="Things I make"><div class="make-track" id="make">
+<span>Restaurant &amp; café sites</span><span class="it">Booking websites</span><span>Online stores</span><span class="it">Company websites</span><span>Landing pages</span><span class="it">Personal brand sites</span><span>Dashboards</span><span class="it">Web apps</span><span>Mobile apps</span><span aria-hidden="true">Restaurant &amp; café sites</span><span class="it" aria-hidden="true">Booking websites</span><span aria-hidden="true">Online stores</span><span class="it" aria-hidden="true">Company websites</span><span aria-hidden="true">Landing pages</span><span class="it" aria-hidden="true">Personal brand sites</span><span aria-hidden="true">Dashboards</span><span class="it" aria-hidden="true">Web apps</span><span aria-hidden="true">Mobile apps</span>
+</div></div>
 </section>
 
 <section id="about">
   <div class="wrap about">
     <div class="story up">
       <div class="label"><span>About</span></div>
-      <p class="big">I started building websites for small businesses because I kept seeing great ones with <span class="hl">no way to find them online.</span></p>
-      <p>A bubble tea shop with queues outside but only an Instagram page. A clinic still taking bookings by phone. I've spent five years building software for companies, from breaking big systems into smaller services to running production releases. Those same skills make a small business site fast, secure and easy to manage.</p>
-      <p>When you work with me you get the person who writes the code. I'll tell you honestly what you need, what you don't, and what it'll cost before we start.</p>
+      <p class="big">I started doing this because I kept finding great little businesses that were hard to find online.</p>
+      <p>There's a bubble tea place near me with a queue out the door and nothing but an Instagram page. A clinic down the road still takes every booking over the phone. At work I build large systems for companies, and it felt like a waste not to use that for the places I actually go to.</p>
+      <p>It's just me. You talk to me and I write the code. If you don't need something, I'll tell you, and you'll know the price before we start.</p>
     </div>
-    <dl class="facts" id="facts"></dl>
+    <dl class="facts" id="facts">
+<div><dt>Based in</dt><dd>Colombo, Sri Lanka</dd></div><div><dt>Experience</dt><dd>5+ years in software</dd></div><div><dt>Works with</dt><dd>Clients locally and worldwide</dd></div><div><dt>Day job</dt><dd>Software engineer</dd></div><div><dt>Best way to reach me</dt><dd>Email or the project form</dd></div><div><dt>Outside work</dt><dd>Travelling, and planning the next trip</dd></div>
+</dl>
   </div>
 </section>
 
 <section id="process">
   <div class="wrap process">
     <div class="intro-col">
-      <div class="label"><span>How it works</span></div>
-      <h2>A clear process, so you always know what's next.</h2>
-      <p>No disappearing for weeks. You see progress at every stage and nothing goes live until you're happy with it.</p>
+      <div class="label"><span>Working together</span></div>
+      <h2>Here's roughly how it goes.</h2>
+      <p>Every project is a bit different, but this is what usually happens.</p>
     </div>
-    <ol class="tl" id="steps"></ol>
+    <ol class="tl" id="steps">
+<span class="tl-fill" aria-hidden="true"></span><li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div><small>01</small><h3>We have a chat</h3><p>You fill in the form or we jump on a call. I'll ask about your business, who your customers are and what you want to spend.</p></div></li><li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div><small>02</small><h3>I show you a design</h3><p>You'll see what the site will look like before I write any code. Change whatever you don't like.</p></div></li><li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div><small>03</small><h3>I build it</h3><p>I'll send you a link every so often so you can click around and see how it's going.</p></div></li><li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div><small>04</small><h3>It goes live</h3><p>I put it on your domain and show you how to change text and photos yourself.</p></div></li><li class="tl-item"><span class="tl-node" aria-hidden="true"></span><div><small>05</small><h3>I stick around</h3><p>If something breaks or you want to add something later, just message me.</p></div></li>
+</ol>
   </div>
 </section>
 
 <section id="pricing">
   <div class="wrap">
-    <div class="label"><span>Pricing</span><span>Fixed quotes, no surprises</span></div>
-    <div class="plans" id="plans"></div>
-    <div class="ent" id="ent"></div>
-    <p class="care"><b>After launch:</b> care plans from $75/month for updates, backups and fixes. Every quote is fixed before work starts. 50% to begin, 50% at launch.</p>
+    <div class="label"><span>Pricing</span></div>
+    <p class="price-intro">These are starting prices. Once I know what you need, I'll send you an exact quote, and that's what you pay.</p>
+    <div class="plans" id="plans">
+<div class="plan"><div class="top-row"><h3>Starter</h3></div><div class="amt"><small>from</small>$575</div><p class="desc">A simple site so people can find you, see what you do and get in touch.</p><ul><li>Up to 5 pages</li><li>Mobile-friendly custom design</li><li>Contact form, WhatsApp &amp; Google Maps</li><li>Basic SEO setup</li><li>Domain &amp; hosting setup</li><li>2 revision rounds</li><li>14 days of support</li></ul><span class="time">Ready in 1–2 weeks</span><a class="btn" href="#contact">Ask about this</a></div><div class="plan pop"><div class="top-row"><h3>Business</h3></div><div class="amt"><small>from</small>$1,500</div><p class="desc">For when you want people to book, order or buy on the site, and update it yourself.</p><ul><li>Everything in Starter</li><li>Up to 10 pages</li><li>Online booking, a store (up to 30 products) or a blog</li><li>Admin panel to edit content &amp; prices</li><li>Payment integration if needed</li><li>Full SEO, speed &amp; analytics</li><li>3 revision rounds</li><li>30 days of support + training video</li></ul><span class="time">Ready in 3–4 weeks</span><a class="btn" href="#contact">Ask about this</a></div><div class="plan"><div class="top-row"><h3>Premium</h3></div><div class="amt"><small>from</small>$5,000</div><p class="desc">A web app, a mobile app or a proper online store, built from scratch.</p><ul><li>Planning session &amp; feature roadmap</li><li>Custom design, approved before build</li><li>Web app, iOS &amp; Android app or full store</li><li>User accounts, logins &amp; dashboards</li><li>Payment &amp; third-party integrations</li><li>Secure database &amp; cloud hosting</li><li>Full testing before launch</li><li>60 days of support</li></ul><span class="time">6–12 weeks, in milestones</span><a class="btn" href="#contact">Ask about this</a></div>
+</div>
+    <p class="care">Bigger than this, like several apps and a staff dashboard? <a href="#contact">Get in touch</a> and we'll work it out. After launch I can look after the site for $75 a month. I usually ask for half up front and half when it goes live.</p>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
     <div class="label"><span>Questions</span></div>
-    <div class="faq" id="faqs"></div>
+    <div class="faq" id="faqs">
+<details><summary>How long does a project take?</summary><p>A Starter site takes 1–2 weeks. Bigger sites and apps take 3–12 weeks depending on features. You'll get a clear timeline before we start.</p></details><details><summary>Do you work with clients outside Sri Lanka?</summary><p>Yes. I work remotely with clients anywhere and keep you updated over email, WhatsApp or video calls in your time zone.</p></details><details><summary>How does payment work?</summary><p>50% to start and 50% at launch. Larger projects are paid in milestones as each stage is delivered.</p></details><details><summary>I don't have a design or logo yet.</summary><p>That's fine. I'll design the look and flow with you before building, and can suggest colours and fonts that suit your business.</p></details><details><summary>Will I own my website?</summary><p>Yes. Once it's paid in full, the code, design and accounts are yours.</p></details><details><summary>What happens after launch?</summary><p>Every project includes a support period. After that, care plans cover updates, backups, fixes and small changes.</p></details>
+</div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <div class="label"><span>Contact</span><span>Usually replies within a day</span></div>
-    <h2>Have a project in mind? Let's build it together.</h2>
+    <div class="label"><span>Contact</span></div>
+    <h2>Got something in mind?</h2>
     <div class="reach">
       <div>
-        <p>Tell me about your business and what you have in mind. A two-minute form is the fastest way, and I'll come back with questions, an approach and a fixed quote.</p>
+        <p>Fill in the form and tell me a bit about it. It doesn't have to be fully figured out. I read every one myself and usually reply within a day or two.</p>
+        <p class="sign">Sidra</p>
         <div class="cta">
-          <a class="btn solid" id="formLink" href="#" target="_blank" rel="noopener">Fill in the project form ↗</a>
+          <a class="btn solid" id="formLink" href="#" target="_blank" rel="noopener">Open the project form ↗</a>
         </div>
       </div>
       <div class="links">
@@ -422,7 +433,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <footer>
   <div class="wrap">
     <span>© <span id="year"></span> Sidra Mowlana</span>
-    <span>Designed and built by me, in Colombo.</span>
+    <span>Made by me, in Colombo.</span>
     <a href="#top">Back to top ↑</a>
   </div>
 </footer>
@@ -439,47 +450,80 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     googleForm: "https://forms.gle/your-form-link"
   };
 
-  /* EDIT THESE: your projects. Put the live link in url when it's hosted */
+  /* Project colours for the hover preview (the project text itself is in the HTML above) */
   const projects = [
     {n:"Bing Chun Union Branch", w:"Bubble tea shop, Colombo", s:"Demo", url:"", h:"Fresh bubble tea in Colombo", cta:"Order now", bg:"#e94e77", btn:"#ffd23f", ink:"#1b1b1b"},
-    {n:"The Grind Café", w:"Café menu & story site", s:"In progress", url:"", h:"Coffee worth slowing down for", cta:"View menu", bg:"#3b2a20", btn:"#e8c39e", ink:"#1b1b1b"},
-    {n:"CareWell Clinic", w:"Clinic with online booking", s:"Concept", url:"", h:"Book your appointment in minutes", cta:"Book now", bg:"#0f7c78", btn:"#ffffff", ink:"#0f7c78"},
-    {n:"Atelier", w:"Online store for a fashion label", s:"Concept", url:"", h:"New season, new favourites", cta:"Shop now", bg:"#1b1b1b", btn:"#f2e8dc", ink:"#1b1b1b"},
-    {n:"Perera & Co.", w:"Law firm website", s:"Concept", url:"", h:"Clear legal advice you can trust", cta:"Get in touch", bg:"#1f2a44", btn:"#c8a464", ink:"#1f2a44"},
-    {n:"Bloom Studio", w:"Creative agency portfolio", s:"Concept", url:"", h:"Brands people can't scroll past", cta:"Start a project", bg:"#6c3cf0", btn:"#c9f25a", ink:"#1b1b1b"}
+    {n:"The Grind Café", w:"Café menu & story site", s:"In progress", url:"", h:"Coffee worth slowing down for", cta:"View menu", bg:"#3b2a20", btn:"#e8c39e", ink:"#1b1b1b"}
   ];
 
-  const make = ["Restaurant & café sites","Booking websites","Online stores","Company websites","Landing pages","Personal brand sites","Dashboards","Web apps","Mobile apps"];
+  const $ = id => document.getElementById(id);
 
-  const facts = [
-    ["Based in","Colombo, Sri Lanka"],
-    ["Experience","5+ years in software"],
-    ["Works with","Clients locally and worldwide"],
-    ["Day job","Software engineer"],
-    ["Replies","Within 24 hours"],
-    ["Right now","Taking 2 new projects a month"]
-  ];
+  // WHAT: draws a small website preview in a project's own colours
+  // WHY: gives each project a picture until you add real screenshots
+  const mock = p => `<div class="mock" style="background:${p.bg}"><div class="win"><div class="tb"></div><div class="pg"><div class="nm" style="color:${p.ink}">${p.n}</div><div class="hd" style="background:${p.bg}"><b>${p.h}</b><i style="background:${p.btn};color:${p.ink}">${p.cta}</i></div></div></div></div>`;
 
-  const steps = [
-    {t:"Talk", d:"A short call or form. I learn about your business, your customers and your budget."},
-    {t:"Design", d:"You see how your site will look and work, and we adjust it before I build anything."},
-    {t:"Build", d:"I build in stages and send you progress links, so there are no surprises at the end."},
-    {t:"Launch", d:"It goes live on your domain. I show you how to update it and stay on hand afterwards."},
-    {t:"Support", d:"After launch I'm here for fixes, updates and new features as your business grows."}
-  ];
+  // WHAT: shows a preview of the project that follows the cursor while hovering a row
+  // WHY: adds a personal, hand-made feel and lets visitors see each site without leaving the list
+  const peek = $("peek");
+  document.querySelectorAll(".row").forEach(r => {
+    r.addEventListener("mouseenter", () => { peek.innerHTML = mock(projects[r.dataset.i]); peek.classList.add("on"); });
+    r.addEventListener("mouseleave", () => peek.classList.remove("on"));
+    r.addEventListener("mousemove", e => { peek.style.left = (e.clientX + 200) + "px"; peek.style.top = e.clientY + "px"; });
+  });
 
-  /* EDIT THESE: your packages */
-  const pricing = [
-    {t:"Starter", amt:"$575", time:"Ready in 1–2 weeks", d:"For small businesses that need a professional site people can find.", f:["Up to 5 pages","Mobile-friendly custom design","Contact form, WhatsApp & Google Maps","Basic SEO setup","Domain & hosting setup","2 revision rounds","14 days of support"]},
-    {t:"Business", amt:"$1,500", pop:true, time:"Ready in 3–4 weeks", d:"A site that brings in bookings or sales, and one you can update yourself.", f:["Everything in Starter","Up to 10 pages","Online booking, a store (up to 30 products) or a blog","Admin panel to edit content & prices","Payment integration if needed","Full SEO, speed & analytics","3 revision rounds","30 days of support + training video"]},
-    {t:"Premium", amt:"$5,000", time:"6–12 weeks, in milestones", d:"Custom web apps, mobile apps and full online stores.", f:["Planning session & feature roadmap","Custom design, approved before build","Web app, iOS & Android app or full store","User accounts, logins & dashboards","Payment & third-party integrations","Secure database & cloud hosting","Full testing before launch","60 days of support"]}
-  ];
-  const enterprise = {t:"Enterprise", amt:"$10,000", d:"Several connected apps, staff dashboards and links to the tools you already use. 3–6 months.", f:["Everything in Premium","Discovery workshop & technical plan","Customer app, staff app & admin dashboard","CRM, accounting, delivery & SMS integrations","Role-based access for your team","Security review & performance testing","Documentation & team training","90 days of priority support"]};
+  // WHAT: wraps each word of the hero headline, the About quote and the contact heading in its own span
+  // WHY: lets the words rise in one after another, or darken word by word as you scroll, for a hand-crafted feel
+  const splitWords = el => {
+    let i = 0;
+    const walk = node => [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) { frag.append(part); return; }
+          const s = document.createElement("span");
+          s.className = "w"; s.style.setProperty("--i", i++); s.textContent = part;
+          frag.append(s);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+    walk(el);
+  };
+  document.querySelectorAll(".hero h1, .story p.big, .contact h2").forEach(splitWords);
 
-  const faqs = [
-    ["How long does a project take?","A Starter site takes 1–2 weeks. Bigger sites and apps take 3–12 weeks depending on features. You'll get a clear timeline before we start."],
-    ["Do you work with clients outside Sri Lanka?","Yes. I work remotely with clients anywhere and keep you updated over email, WhatsApp or video calls in your time zone."],
-    ["How does payment work?","50% to start and 50% at launch. Larger projects are paid in milestones as each stage is delivered."],
-    ["I don't have a design or logo yet.","That's fine. I'll design the look and flow with you before building, and can suggest colours and fonts that suit your business."],
-    ["Will I own my website?","Yes. Once it's paid in full, the code, design and accounts are yours."],
-    ["What happens after launch?","Every project includes a support period.
+  // WHAT: shows the live Colombo time in the top bar
+  // WHY: tells overseas clients when you're awake and likely to reply
+
+  // WHAT: fills in your email, links, form and the year from CONFIG
+  // WHY: change your details once at the top and they update everywhere
+  $("emailText").textContent = CONFIG.email;
+  $("emailLink").href = "mailto:" + CONFIG.email;
+  $("linkedinLink").href = CONFIG.linkedin;
+  $("githubLink").href = CONFIG.github;
+  $("formLink").href = CONFIG.googleForm;
+  $("year").textContent = new Date().getFullYear();
+
+  // WHAT: opens and closes the full-screen menu on phones, and closes it when a link is tapped or Escape is pressed
+  // WHY: on small screens the top links are hidden, so this gives visitors an easy way to jump to any section
+  const menu = $("menu"), menuBtn = $("menuBtn");
+  const setMenu = open => {
+    menu.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", open);
+    document.body.classList.toggle("locked", open);
+  };
+  menuBtn.addEventListener("click", () => setMenu(menu.hidden));
+  menu.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+  addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+  addEventListener("resize", () => { if (innerWidth > 700) setMenu(false); });
+
+  // WHAT: lets visitors tap the ticker to pause or restart it on touch screens
+  // WHY: phones have no hover, so tapping does the same job as hovering on a computer
+  const ticker = document.querySelector(".make-track");
+  document.querySelector(".make").addEventListener("click", () => {
+    ticker.style.animationPlayState = ticker.style.animationPlayState === "paused" ? "running" : "paused";
+  });
+}
+</script>
+</body>
+</html>
